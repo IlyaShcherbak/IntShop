@@ -6,7 +6,6 @@ body{
     background-size: 100% 100%;
     background-attachment: fixed;
 }
-
 .header{
     width: 99%;
     height: 80px;
@@ -41,4 +40,18 @@ body{
     font-family: Arial, SansSerif;
     font-size: 25px;
     display: inline;
+}
+.sideBar{
+    width: 20%;
+    height: 100%;
+    background-color: blueviolet;
+    position: fixed;
+
+}
+.sideBar li{
+    color: white;
+    font-size: medium;
+    padding: 10px;
+    list-style: none;
+
 }
