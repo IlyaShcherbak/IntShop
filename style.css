@@ -58,6 +58,6 @@ body{
 #subList{
     display: none;
 }
-.sideBar:hover #subList{
+.sideBar li:hover #subList{
     display: block;
 }
