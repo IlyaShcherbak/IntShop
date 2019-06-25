@@ -46,7 +46,6 @@ const category5 = {
         'Hiking and camping',
         'Clothing for active recreation'
     ]
-
 };
 
 const category6 = {
@@ -68,11 +67,40 @@ let categories = [
     category6
 ];
 
-console.log(categories.length)
+console.log(categories.length);
+console.log(category1);
 
-let cat = document.getElementById('categories');
+
+
+
+let cat = document.getElementById('categories');// получить див категории
+
 for(let i=0; i<=categories.length-1; i++){
-    let newLi = document.createElement('li');
-    newLi.innerHTML = categories[i].name;
-    cat.appendChild(newLi);
+
+    let newLi = document.createElement('li');// создать пункт списка
+    let newA = document.createElement('a');// создать А
+    let name = document.createTextNode(categories[i].name); // создать текстовый узел
+
+    newA.appendChild(name);// заполняем А текстовым узлом
+    newLi.appendChild(newA); // заполняем Li
+    //newLi.innerHTML = "<a>"+categories[i].name+ "</a>";
+
+    let innerList = categories[i].subcategories;// беру масив подкатегорий
+    let newUl = document.createElement('ul');
+
+    for (let j=0; j<= categories.length-1; j++) {
+        if (innerList[j] != undefined) {
+            let subLi = document.createElement('li');
+            let subCat = document.createTextNode(innerList[j]);
+            subLi.appendChild(subCat);
+            //newUl.style.display = 'none';
+
+            newUl.appendChild(subLi);
+            //newUl.innerHTML = '<li>'+ innerList[j] + '</li>';
+        }
+    }
+    newUl.id ='subList';
+
+    newLi.appendChild(newUl);
+    cat.appendChild(newLi); // добавляет пункт в конец списка
 }

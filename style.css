@@ -46,6 +46,7 @@ body{
     height: 100%;
     background-color: blueviolet;
     position: fixed;
+    opacity: 0.8;
 
 }
 .sideBar li{
@@ -53,5 +54,10 @@ body{
     font-size: medium;
     padding: 10px;
     list-style: none;
-
+}
+#subList{
+    display: none;
+}
+.sideBar:hover #subList{
+    display: block;
 }
